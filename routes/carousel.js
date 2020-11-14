@@ -1,4 +1,4 @@
-/* const express = require('express');
+const express = require('express');
 const router = express.Router();
 const carouselImagenController = require('../controllers/carouselimagenController');
 
@@ -6,4 +6,4 @@ const carouselImagenController = require('../controllers/carouselimagenControlle
   router.get('/', carouselImagenController.list);
    
   
-  module.exports = router; */
+  module.exports = router; 

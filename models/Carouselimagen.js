@@ -1,4 +1,4 @@
-/* const mongoose = require('mongoose');
+ const mongoose = require('mongoose');
 
 const carouselimagenSchema = new mongoose.Schema({
     link: String,
@@ -7,4 +7,4 @@ const carouselimagenSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Carouselimagen',carouselimagenSchema); */
+module.exports = mongoose.model('Carouselimagen',carouselimagenSchema);

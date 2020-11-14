@@ -1,4 +1,4 @@
-/* const Carouselimagen = require('../models/Carouselimagen.js');
+const Carouselimagen = require('../models/Carouselimagen.js');
 
 module.exports = {
     list: function (req, res) {
@@ -9,4 +9,4 @@ module.exports = {
             res.status(500).send({ message: "Internal error, the product could not be searched." })
         });
     }
-} */
+}
