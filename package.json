@@ -1,0 +1,28 @@
+{
+  "name": "gamer-vip-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tynzer/Proyecto-Final-Gamer-Vip-Back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tynzer/Proyecto-Final-Gamer-Vip-Back/issues"
+  },
+  "homepage": "https://github.com/tynzer/Proyecto-Final-Gamer-Vip-Back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.8",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
