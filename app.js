@@ -4,9 +4,8 @@ const cors = require("cors");
 const morgan = require("morgan");
 const app = express();
 const PORT = process.env.PORT || 3001;
-
-const CONNECTION_STRING = "mongodb+srv://root:guayerd@cluster0.elmbs.mongodb.net/guayerd-bikes?retryWrites=true&w=majority";
-
+CONNECTION_STRING = "mongodb+srv://root:root@cluster0.cxwwm.mongodb.net/GamerVip?retryWrites=true&w=majority";
+// import router
 const carouselRouter = require('./routes/carousel'); 
 const productosRouter = require('./routes/productos');
 const categoriasRouter = require('./routes/categorias');
