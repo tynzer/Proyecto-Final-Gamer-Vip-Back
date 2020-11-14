@@ -11,7 +11,6 @@ const carouselRouter = require('./routes/carousel');
 const productosRouter = require('./routes/productos');
 const categoriasRouter = require('./routes/categorias');
 
-const User = require("./models/User");
 //////////////////// Aplico Middlewares
 app.use(express.json());
 app.use(cors());
