@@ -4,6 +4,7 @@ const carouselimagenSchema = new mongoose.Schema({
     link: String,
     titulo: String,
     texto: String,
+    enabled: Boolean
 });
 
 

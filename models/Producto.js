@@ -9,7 +9,9 @@ const productoSchema = new mongoose.Schema({
     SKU: String,
     descripcion: String,
     peso: String,
-    enabled: Boolean
+    enabled: Boolean,
+    linkImagen : String,
+    titulo : String
 });
 const ProdcuctoModel = mongoose.model("Producto",productoSchema); 
 module.exports = ProdcuctoModel;
