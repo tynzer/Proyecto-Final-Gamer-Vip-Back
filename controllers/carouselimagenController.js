@@ -13,7 +13,7 @@ module.exports = {
         Carouselimagen.create({categoria : req.body.categoria, enabled: req.body.enabled, internavalo: req.body.internavalo, titulo:req.body.titulo , texto:req.body.texto, URL:req.body.URL }
              , function(err, nuevoCarouselimagen){
             if(err){
-                res.send ({errors: err.errors})
+                res.status(500).send({errors: err.errors})
             }else{
                 res.status(201).send({nuevoCarouselimagen})
             }

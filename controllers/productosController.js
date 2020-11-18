@@ -14,7 +14,7 @@ module.exports = {
              SKU: req.body.SKU , descripcion: req.body.descripcion , peso :req.body.peso, linkImagen: req.body.linkImagen, titulo : req.body.titulo}
              , function(err, nuevoProducto){
             if(err){
-                res.send ({errors: err.errors})
+                res.status(500).send({errors: err.errors})
             }else{
                 res.status(201).send({nuevoProducto})
             }

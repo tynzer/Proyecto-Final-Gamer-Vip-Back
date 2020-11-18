@@ -13,7 +13,7 @@ module.exports = {
         Categoria.create({categoria : req.body.categoria, enabled: req.body.enabled}
              , function(err, nuevoCategoria){
             if(err){
-                res.send ({errors: err.errors})
+                res.status(500).send ({errors: err.errors})
             }else{
                 res.status(201).send({nuevoCategoria})
             }

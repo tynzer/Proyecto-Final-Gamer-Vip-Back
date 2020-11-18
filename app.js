@@ -9,14 +9,15 @@ CONNECTION_STRING = "mongodb+srv://root:root@cluster0.cxwwm.mongodb.net/GamerVip
 const carouselRouter = require('./routes/carousel'); 
 const productosRouter = require('./routes/productos');
 const categoriasRouter = require('./routes/categorias');
+const usersRouter = require('./routes/users');
 
 //////////////////// Aplico Middlewares
 app.use(express.json());
 app.use(cors());
 app.use(morgan("short"));
 
-//routas 
-
+//rutas 
+app.use('/',usersRouter)
 app.use('/carousel', carouselRouter); 
 app.use('/productos', productosRouter);
 app.use('/categorias', categoriasRouter);
@@ -24,7 +25,8 @@ app.use('/categorias', categoriasRouter);
 
 //Levantar la applicacion luego de realizar la conexion de mongoose a Atlas.
 
-mongoose.connect(CONNECTION_STRING, { useUnifiedTopology: true, useNewUrlParser: true }, function (err) {
+mongoose.set("useCreateIndex", true)
+.connect(CONNECTION_STRING,{ useUnifiedTopology: true, useNewUrlParser: true }, function (err) {
 
     if (err) {
         console.error(err.message)
