@@ -6,6 +6,6 @@ const carouselImagenController = require('../controllers/carouselimagenControlle
   router.get('/', carouselImagenController.list);
   router.post('/', carouselImagenController.create);
   router.delete('/:id', carouselImagenController.delete);
-  router.put('/:id', carouselImagenController.update);
+  router.patch('/:id', carouselImagenController.update);
   
   module.exports = router; 
