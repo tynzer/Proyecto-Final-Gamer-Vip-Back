@@ -10,6 +10,7 @@ const carouselRouter = require('./routes/carousel');
 const productosRouter = require('./routes/productos');
 const categoriasRouter = require('./routes/categorias');
 const usersRouter = require('./routes/users');
+const marcasRouter = require('./routes/marcas');
 
 //////////////////// Aplico Middlewares
 app.use(express.json());
@@ -21,7 +22,7 @@ app.use('/',usersRouter)
 app.use('/carousel', carouselRouter); 
 app.use('/productos', productosRouter);
 app.use('/categorias', categoriasRouter);
-
+app.use('/marcas', marcasRouter);
 
 //Levantar la applicacion luego de realizar la conexion de mongoose a Atlas.
 
