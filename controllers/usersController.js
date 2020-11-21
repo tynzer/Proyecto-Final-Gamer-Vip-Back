@@ -1,4 +1,7 @@
 const User = require('../models/User');
+const { JWT_SECRET } = require('../configs/config');
+const jwt = require('jsonwebtoken');
+
 
 module.exports = {
     register: async (req, res, next) => {
@@ -6,18 +9,18 @@ module.exports = {
         console.log(email)
         console.log(password)
         // Check if there is a user with the same email
-             const foundUser = await User.findOne({ email: email });
-            if (foundUser) {
-                return res.status(403).json({ error: 'Email is already in use' });
-            } 
+        const foundUser = await User.findOne({ email: email });
+        if (foundUser) {
+            return res.status(403).json({ error: 'Email is already in use' });
+        }
         const user = new User({ email, password })
         user.save()
-        .then(function (savedUser) {
+            .then(function (savedUser) {
                 if (savedUser) {
                     res.status(201).send({ savedUser })
                 }
             })
-        .catch(function (error) {
+            .catch(function (error) {
                 res.status(500).send("internal error, it don´t save")
             })
     },
@@ -31,8 +34,14 @@ module.exports = {
         if (!isMatch) {
             res.status(403).send({ error: 'Invalid email or password' })
         } else {
-            res.status(201).send({ message: "User checked" })
+            const token = jwt.sign(
+                { userId: foundUser._id },
+                JWT_SECRET,
+                { expiresIn: '24h' });
+            res.status(200).send({
+                userId: foundUser._id,
+                token: token
+            });
         }
-
     }
 }

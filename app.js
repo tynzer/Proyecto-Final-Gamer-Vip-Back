@@ -11,6 +11,7 @@ const productosRouter = require('./routes/productos');
 const categoriasRouter = require('./routes/categorias');
 const usersRouter = require('./routes/users');
 const marcasRouter = require('./routes/marcas');
+const auth = require('./middleware/auth');
 
 //////////////////// Aplico Middlewares
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use(morgan("short"));
 
 //rutas 
 app.use('/',usersRouter)
+app.use(auth)
 app.use('/carousel', carouselRouter); 
 app.use('/productos', productosRouter);
 app.use('/categorias', categoriasRouter);
