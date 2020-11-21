@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const categoriasController = require('../controllers/categoriasController');
+const auth = require('../middleware/auth');
 
 // middleware that is specific to this router
   router.get('/', categoriasController.list);
-router.post('/', categoriasController.create);
-router.delete('/:id', categoriasController.delete);
-router.patch('/:id', categoriasController.update);
+router.post('/',auth, categoriasController.create);
+router.delete('/:id',auth, categoriasController.delete);
+router.patch('/:id',auth, categoriasController.update);
    
   
   module.exports = router;
