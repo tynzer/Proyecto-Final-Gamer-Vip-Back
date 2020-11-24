@@ -6,6 +6,7 @@ const auth = require('../middleware/auth');
 // middleware that is specific to this router
 router.get('/', productosController.list);
 router.post('/',auth, productosController.create);
+router.get('/:id', productosController.mercadoPagoList);
 router.delete('/:id',auth, productosController.delete);
 router.patch('/:id',auth, productosController.update);
 

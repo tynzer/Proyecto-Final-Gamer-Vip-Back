@@ -5,6 +5,9 @@ const morgan = require("morgan");
 const app = express();
 const PORT = process.env.PORT || 3001;
 CONNECTION_STRING = "mongodb+srv://root:root@cluster0.cxwwm.mongodb.net/GamerVip?retryWrites=true&w=majority";
+
+
+
 // import router
 const carouselRouter = require('./routes/carousel'); 
 const productosRouter = require('./routes/productos');
@@ -25,6 +28,11 @@ app.use('/productos', productosRouter);
 app.use('/categorias', categoriasRouter);
 app.use('/marcas', marcasRouter);
 
+
+
+
+
+  
 //Levantar la applicacion luego de realizar la conexion de mongoose a Atlas.
 
 mongoose.set("useCreateIndex", true)
@@ -35,7 +43,7 @@ mongoose.set("useCreateIndex", true)
     } else {
         console.log("Conexion establecida");
         app.listen(PORT, function () {
-            console.log("Server Express Listening");
+            console.log("Server Express Listening", PORT);
         });
     }
 })
