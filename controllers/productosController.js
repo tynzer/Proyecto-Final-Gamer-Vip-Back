@@ -32,7 +32,7 @@ module.exports = {
         titulo: req.body.titulo,
         enabled: req.body.enabled,
         descuento: req.body.descuento,
-        destacado : req.body.desctacado
+        destacado : req.body.destacado
       },
       function (err, nuevoProducto) {
         if (err) {
@@ -68,7 +68,7 @@ module.exports = {
       titulo: req.body.titulo,
       enabled: req.body.enabled,
       descuento: req.body.descuento,
-      destacado : req.body.desctacado
+      destacado : req.body.destacado
     };
     Producto.findByIdAndUpdate(
       req.params.id,
