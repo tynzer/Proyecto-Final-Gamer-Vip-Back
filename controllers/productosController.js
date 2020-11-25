@@ -30,7 +30,9 @@ module.exports = {
         peso: req.body.peso,
         linkImagen: req.body.linkImagen,
         titulo: req.body.titulo,
-        enabled: req.body.enabled
+        enabled: req.body.enabled,
+        descuento: req.body.descuento,
+        desctacado : req.body.desctacado
       },
       function (err, nuevoProducto) {
         if (err) {
@@ -65,6 +67,8 @@ module.exports = {
       linkImagen: req.body.linkImagen,
       titulo: req.body.titulo,
       enabled: req.body.enabled,
+      descuento: req.body.descuento,
+      desctacado : req.body.desctacado
     };
     Producto.findByIdAndUpdate(
       req.params.id,
