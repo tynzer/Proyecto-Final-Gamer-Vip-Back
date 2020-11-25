@@ -1,10 +1,11 @@
  const mongoose = require('mongoose');
 
 const carouselimagenSchema = new mongoose.Schema({
-    link: String,
+    URL: String,
     titulo: String,
     texto: String,
-    enabled: Boolean
+    enabled: Boolean,
+    categoria: String
 });
 
 

@@ -10,7 +10,8 @@ module.exports = {
         });
     },
     create : function (req, res){
-        Categoria.create({categoria : req.body.categoria, enabled: req.body.enabled}
+        Categoria.create({categoria : req.body.categoria, enabled: req.body.enabled, URL: req.body.URL,
+             texto :req.body.texto, titulo: req.body.titulo, intervalo: req.body.intervalo}
              , function(err, nuevoCategoria){
             if(err){
                 res.status(500).send ({errors: err.errors})
@@ -29,7 +30,8 @@ module.exports = {
             });
     }),
     update: function(req, res){
-        var update_values = {categoria : req.body.categoria, enabled: req.body.enabled }
+        var update_values = {categoria : req.body.categoria, enabled: req.body.enabled, URL: req.body.URL,
+            texto :req.body.texto, titulo: req.body.titulo, intervalo: req.body.intervalo }
             Categoria.findByIdAndUpdate(req.params.id, update_values,{ new: true }, function(err, updateCategoria){
             if(err){
                 res.status(500).send({errors: err.errors})
