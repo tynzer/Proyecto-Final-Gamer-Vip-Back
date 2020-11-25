@@ -11,7 +11,9 @@ const productoSchema = new mongoose.Schema({
     peso: String,
     enabled: Boolean,
     linkImagen : String,
-    titulo : String
+    titulo : String,
+    descuento : Number,
+    destacado : Boolean
 });
 const ProdcuctoModel = mongoose.model("Producto",productoSchema); 
 module.exports = ProdcuctoModel;
