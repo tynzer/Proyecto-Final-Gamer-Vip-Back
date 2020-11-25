@@ -32,7 +32,7 @@ module.exports = {
         titulo: req.body.titulo,
         enabled: req.body.enabled,
         descuento: req.body.descuento,
-        destacado : req.body.destacado
+        destacado: req.body.destacado,
       },
       function (err, nuevoProducto) {
         if (err) {
@@ -68,7 +68,7 @@ module.exports = {
       titulo: req.body.titulo,
       enabled: req.body.enabled,
       descuento: req.body.descuento,
-      destacado : req.body.destacado
+      destacado: req.body.destacado,
     };
     Producto.findByIdAndUpdate(
       req.params.id,
@@ -92,14 +92,19 @@ module.exports = {
             access_token: PROD_ACCESS_TOKEN,
           });
 
+          let precio = productFounded.precio;
+          if (productFounded.descuento < productFounded.precio) {
+            precio = productFounded.descuento;
+          }
+
           let preference = {
             items: [
               {
                 title: productFounded.titulo,
-                unit_price: productFounded.precio,
-                picture_url : productFounded.linkImagen,
-                description : productFounded.descripcion,
-                category_id : productFounded.categoria,
+                unit_price: precio,
+                picture_url: productFounded.linkImagen,
+                description: productFounded.descripcion,
+                category_id: productFounded.categoria,
                 quantity: 1,
               },
             ],
